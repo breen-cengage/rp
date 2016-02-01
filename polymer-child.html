@@ -1,0 +1,19 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="polymer-child">
+    <template>
+        this component is in <span class="language">[[language]]</span>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'polymer-child',
+        properties : {
+            language: {
+                type: String,
+                value: 'polymer'
+            }
+        }
+    });
+</script>

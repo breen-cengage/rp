@@ -1,0 +1,35 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="polymer-child.html">
+
+<dom-module id="polymer-container">
+    <template>
+        <polymer-child></polymer-child>
+        <div id="reactChild1"></div>
+        <div id="reactChild2"></div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'polymer-container',
+        properties: {
+            language: {
+                type: String,
+                value: 'react'
+            }
+        },
+        ready: function () {
+            ReactDOM.render(
+                React.createElement(ReactChild, { language: this.language }),
+                document.getElementById('reactChild1')
+            );
+
+            this.language += ' also';
+
+            ReactDOM.render(
+                React.createElement(ReactChild, { language: this.language }),
+                document.getElementById('reactChild2')
+            );
+        }
+    });
+</script>
