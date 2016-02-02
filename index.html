@@ -1,20 +1,20 @@
 <html>
     <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-        <script type="text/babel" src="ReactChild.jsx"></script>
-        <link rel="import" href="bower_components/polymer/polymer.html">
-        <link rel="import" href="polymer-container.html">
-        <style>
-            .language {
-                font-weight: bold;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="bower_components/charto-polymer-shim/hide.css" />
+        <script src="bower_components/system.js/dist/system.js"></script>
+        <script src="bower_components/charto-polymer-shim/loader.js"></script>
+        <script src="config.js"></script>
+        <script>
+            loadMainComponents([
+                [
+                    'bower_components/polymer/polymer.html!',
+                    'bower_components/polymer-ts/polymer-ts.html!'
+                ],
+                'app'
+            ]);
+        </script>
     </head>
-    <body>
-        <polymer-container></polymer-container>
+    <body unresolved>
+        <app-frontend></app-frontend>
     </body>
 </html>
